@@ -540,10 +540,10 @@ class CryticCompile:
                 compiled_archive = json.load(file)
 
         # Verify the compiled archive is of the correct form
-        if not isinstance(compiled_archive, dict) or "compilations" not in compiled_archive:
+        if not isinstance(compiled_archive, dict) or "compilation_units" not in compiled_archive:
             raise ValueError("Cannot import compiled archive, invalid format.")
 
-        return [CryticCompile(archive) for archive in compiled_archive["compilations"]]
+        return [CryticCompile(archive) for archive in compiled_archive["compilation_units"]]
 
     # endregion
 
